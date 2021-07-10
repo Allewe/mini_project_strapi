@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "name": "Person",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "password": {
+      "type": "string"
+    },
+    "author": {
+      "via": "person",
+      "model": "authors"
+    },
+    "reader": {
+      "via": "person",
+      "model": "readers"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "lecteur",
+        "auteur"
+      ]
+    }
+  }
+}

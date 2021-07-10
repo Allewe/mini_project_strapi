@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_books_audio_books",
+  "info": {
+    "name": "audio_book",
+    "icon": "headphones-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "track": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "chapter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "books.chapter"
+    }
+  }
+}

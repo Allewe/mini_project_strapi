@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_comments_comments",
+  "info": {
+    "name": "comments",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "comment": {
+      "type": "text"
+    },
+    "reader": {
+      "model": "readers"
+    }
+  }
+}

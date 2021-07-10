@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "readers",
+  "info": {
+    "name": "Readers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "person": {
+      "via": "reader",
+      "model": "person"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "Debutant",
+        "Novice",
+        "Pro",
+        "Erudit",
+        "Maitre"
+      ]
+    },
+    "authors": {
+      "via": "readers",
+      "collection": "authors",
+      "dominant": true
+    },
+    "follow": {
+      "type": "integer"
+    },
+    "books": {
+      "via": "readers",
+      "collection": "book"
+    }
+  }
+}

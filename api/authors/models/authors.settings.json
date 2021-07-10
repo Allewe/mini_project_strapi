@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "name": "Authors",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "person": {
+      "via": "author",
+      "model": "person"
+    },
+    "description": {
+      "type": "text"
+    },
+    "followers": {
+      "default": 0,
+      "type": "integer"
+    },
+    "posts": {
+      "via": "author",
+      "collection": "posts"
+    },
+    "readers": {
+      "via": "authors",
+      "collection": "readers"
+    },
+    "books": {
+      "via": "author",
+      "collection": "book"
+    }
+  }
+}

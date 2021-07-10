@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_time": {
+      "type": "datetime"
+    },
+    "file": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "like": {
+      "type": "integer",
+      "default": 0
+    },
+    "comments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comments.comments"
+    },
+    "author": {
+      "via": "posts",
+      "model": "authors"
+    },
+    "legend": {
+      "type": "text"
+    }
+  }
+}

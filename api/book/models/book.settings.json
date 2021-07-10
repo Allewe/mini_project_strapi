@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "name": "Book",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "publishing_house": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "author": {
+      "via": "books",
+      "model": "authors"
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "developpement",
+        "art",
+        "humour",
+        "scolaire",
+        "sciences",
+        "histoire",
+        "theatre",
+        "fiction"
+      ]
+    },
+    "readers": {
+      "collection": "readers",
+      "via": "books",
+      "dominant": true
+    },
+    "audio_book": {
+      "type": "component",
+      "repeatable": false,
+      "component": "books.audio-book"
+    },
+    "written_book": {
+      "type": "component",
+      "repeatable": false,
+      "component": "books.written-book"
+    },
+    "price": {
+      "type": "integer"
+    }
+  }
+}

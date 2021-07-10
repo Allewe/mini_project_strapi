@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_books_chapters",
+  "info": {
+    "name": "chapter",
+    "icon": "list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "integer",
+      "default": 0
+    },
+    "number": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
